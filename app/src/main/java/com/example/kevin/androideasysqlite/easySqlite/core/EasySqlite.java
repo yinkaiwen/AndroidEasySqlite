@@ -1,4 +1,4 @@
-package com.example.kevin.androideasysqlite.easySqlite;
+package com.example.kevin.androideasysqlite.easySqlite.core;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

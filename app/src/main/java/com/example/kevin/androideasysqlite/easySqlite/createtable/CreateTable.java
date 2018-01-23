@@ -10,7 +10,7 @@ import com.example.kevin.androideasysqlite.easySqlite.annotation.NullSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.RealSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.StringSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.TableSql;
-import com.example.kevin.androideasysqlite.easySqlite.Debug;
+import com.example.kevin.androideasysqlite.easySqlite.core.Debug;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

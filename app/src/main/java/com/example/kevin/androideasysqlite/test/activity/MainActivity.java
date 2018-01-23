@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.kevin.androideasysqlite.R;
-import com.example.kevin.androideasysqlite.easySqlite.EasySqlite;
+import com.example.kevin.androideasysqlite.easySqlite.core.EasySqlite;
 import com.example.kevin.androideasysqlite.test.config.MySqliteConfig;
 
 public class MainActivity extends AppCompatActivity {
