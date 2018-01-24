@@ -1,4 +1,4 @@
-package com.example.kevin.androideasysqlite.easySqlite.createtable;
+package com.example.kevin.androideasysqlite.easySqlite.sqlutils;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,7 +24,7 @@ import java.util.LinkedHashMap;
 
 public class CreateTable {
     private static final String tag = CreateTable.class.getSimpleName();
-    private static final String UID = "serialVersionUID";
+    public static final String UID = "serialVersionUID";
 
     public String getCreateTableSql(Class<?> cls) {
         StringBuilder sql = new StringBuilder();
@@ -52,7 +52,7 @@ public class CreateTable {
     }
 
 
-    private String getTableName(Class<?> cls) {
+    public String getTableName(Class<?> cls) {
         if (cls == null)
             throw new IllegalArgumentException("Class should not be null");
         String tableName;
@@ -112,7 +112,7 @@ public class CreateTable {
                 String columnName = null;
                 String constraint = null;
 
-                columnName = getColumnName(f, obj);
+                columnName = f.getName();
                 constraint = getConstraint(a);
 
                 map.put(columnName, constraint);
@@ -126,7 +126,7 @@ public class CreateTable {
                 StringBuilder constraint = null;
                 Annotation a = annotation[1];
 
-                columnName = getColumnName(f, obj);
+                columnName = f.getName();
                 constraint = new StringBuilder(getConstraint(a));
 
                 if (columnSql.primaryKey()) {
@@ -172,7 +172,7 @@ public class CreateTable {
         return constraint;
     }
 
-    private String getColumnName(Field f, Object obj) {
+/*    private String getColumnName(Field f, Object obj) {
         String columnName = null;
         try {
             columnName = (String) f.get(obj);
@@ -184,7 +184,7 @@ public class CreateTable {
         }
 
         return columnName;
-    }
+    }*/
 
     private void checkMoreConstrain(Annotation a) {
         if (!(a instanceof ConstraintColumnSql)) {

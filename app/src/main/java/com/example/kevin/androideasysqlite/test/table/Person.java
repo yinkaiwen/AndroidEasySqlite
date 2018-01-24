@@ -6,6 +6,7 @@ import com.example.kevin.androideasysqlite.easySqlite.annotation.IntSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.RealSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.StringSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.TableSql;
+import com.example.kevin.androideasysqlite.easySqlite.sqlutils.SaveInfo;
 
 /**
  * Created by kevin on 2018/1/22.
@@ -13,16 +14,32 @@ import com.example.kevin.androideasysqlite.easySqlite.annotation.TableSql;
  */
 
 @TableSql("person_info")
-public class Person {
+public class Person extends SaveInfo {
     @ConstraintColumnSql(primaryKey = true, autoIncrement = true, notNull = true)
     @IntSqlColumn
-    public static final String id = "id";
+    public static int id;
     @StringSqlColumn
-    public static final String age = "age";
+    public static int age;
     @RealSqlColumn
-    public static final String height = "height";
+    public static float height;
     @BoobSqlColumn
-    public static final String gender = "gender";
+    public static boolean gender;
     @StringSqlColumn
-    public static final String name = "name";
+    public static String name;
+
+    public static void setAge(int age) {
+        Person.age = age;
+    }
+
+    public static void setHeight(float height) {
+        Person.height = height;
+    }
+
+    public static void setGender(boolean gender) {
+        Person.gender = gender;
+    }
+
+    public static void setName(String name) {
+        Person.name = name;
+    }
 }

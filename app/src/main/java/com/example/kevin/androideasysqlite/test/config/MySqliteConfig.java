@@ -1,6 +1,7 @@
 package com.example.kevin.androideasysqlite.test.config;
 
 import com.example.kevin.androideasysqlite.easySqlite.config.SqliteConfig;
+import com.example.kevin.androideasysqlite.test.table.News;
 import com.example.kevin.androideasysqlite.test.table.Person;
 import com.example.kevin.androideasysqlite.test.table.TestTable;
 
@@ -15,7 +16,8 @@ public class MySqliteConfig implements SqliteConfig {
 
     public static final Class<?>[] clss = {
             Person.class,
-            TestTable.class
+            TestTable.class,
+//            News.class
     };
 
     @Override

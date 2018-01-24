@@ -44,6 +44,7 @@ public class EasySqlHelper extends SQLiteOpenHelper {
             }
             db.execSQL(sql);
         }
+
     }
 
     @Override
