@@ -1,8 +1,6 @@
 package com.example.kevin.androideasysqlite.easySqlite.core;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.kevin.androideasysqlite.easySqlite.config.SqliteConfig;
@@ -10,15 +8,14 @@ import com.example.kevin.androideasysqlite.easySqlite.default_table.DefaultSqlTa
 import com.example.kevin.androideasysqlite.easySqlite.default_table.DefaultTableUtils;
 import com.example.kevin.androideasysqlite.easySqlite.sqlutils.CreateTable;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by kevin on 2018/1/22.
  * https://github.com/yinkaiwen
+ * <p>
+ * You can use init() method in Application,then the database is created and you can use this object in anytime.
  */
 
 public class EasySqlite {
@@ -35,6 +32,13 @@ public class EasySqlite {
     private EasySqlite() {
     }
 
+    /**
+     * First of all,you should use this method and initialize SQLiteOpenHelper.
+     *
+     * @param context
+     * @param config
+     * @return
+     */
     public static EasySqlite init(Context context, SqliteConfig config) {
         if (instance == null) {
             synchronized (EasySqlite.class) {
@@ -72,7 +76,7 @@ public class EasySqlite {
     }
 
     public static void saveTableInfo() {
-        DefaultTableUtils.saveSomeInfo(mConfig,mCreateTable,mDatabase);
+        DefaultTableUtils.saveSomeInfo(mConfig, mCreateTable, mDatabase);
     }
 
     public static SQLiteDatabase getmDatabase() {

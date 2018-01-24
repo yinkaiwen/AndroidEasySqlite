@@ -16,6 +16,9 @@ import java.util.HashMap;
 /**
  * Created by kevin on 2018/1/23.
  * https://github.com/yinkaiwen
+ * <p>
+ * Create a table need a table_class and the table_class should extends SupportTable.
+ * You can you save() to insert info in database;and use delete() or update() for your purpose.
  */
 
 public class SupportTable {
@@ -106,6 +109,7 @@ public class SupportTable {
 
     /**
      * Delete info
+     *
      * @param whereClause
      */
     public void delete(HashMap<String, String> whereClause) {
@@ -115,14 +119,14 @@ public class SupportTable {
         StringBuilder sb = (StringBuilder) params.get(2);
         String[] args = (String[]) params.get(3);
 
-        if(Debug.isDebug)
-            Log.i(tag,String.format("deleteSql-->%s,args-->%s",sb.toString(),args));
+        if (Debug.isDebug)
+            Log.i(tag, String.format("deleteSql-->%s,args-->%s", sb.toString(), args));
 
         int deleteIndex = db.delete(tableName, sb.toString(), args);
-        Log.i(tag,String.format("deleteIndex-->%s",deleteIndex));
+        Log.i(tag, String.format("deleteIndex-->%s", deleteIndex));
     }
 
-    private ArrayList prepareUpdateOrDelete(HashMap<String, String> whereClause){
+    private ArrayList prepareUpdateOrDelete(HashMap<String, String> whereClause) {
         ArrayList<Object> params = new ArrayList<>();
 
         SQLiteDatabase db = EasySqlite.getmDatabase();
@@ -164,27 +168,3 @@ public class SupportTable {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
