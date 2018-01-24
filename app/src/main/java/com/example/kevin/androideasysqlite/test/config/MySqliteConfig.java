@@ -12,12 +12,12 @@ import com.example.kevin.androideasysqlite.test.table.TestTable;
 
 public class MySqliteConfig implements SqliteConfig {
     public static final String databaseName = "test";
-    public static final int version = 1;
+    public static final int version = 3;
 
     public static final Class<?>[] clss = {
             Person.class,
             TestTable.class,
-//            News.class
+            News.class
     };
 
     @Override

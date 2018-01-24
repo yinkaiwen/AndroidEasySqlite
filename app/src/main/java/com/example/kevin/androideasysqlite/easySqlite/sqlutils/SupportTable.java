@@ -4,37 +4,29 @@ import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.kevin.androideasysqlite.easySqlite.annotation.BoobSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.ConstraintColumnSql;
-import com.example.kevin.androideasysqlite.easySqlite.annotation.IntSqlColumn;
-import com.example.kevin.androideasysqlite.easySqlite.annotation.NullSqlColumn;
-import com.example.kevin.androideasysqlite.easySqlite.annotation.RealSqlColumn;
-import com.example.kevin.androideasysqlite.easySqlite.annotation.StringSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.core.Debug;
 import com.example.kevin.androideasysqlite.easySqlite.core.EasySqlite;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import static com.example.kevin.androideasysqlite.easySqlite.default_table.DefaultSqlTable.tableName;
 
 /**
  * Created by kevin on 2018/1/23.
  * https://github.com/yinkaiwen
  */
 
-public class DatabaseInfoUtils {
+public class SupportTable {
 
-    private static final String tag = DatabaseInfoUtils.class.getSimpleName();
+    private static final String tag = SupportTable.class.getSimpleName();
 
     /**
      * insert info into database
      */
     public void save() {
-        Class<? extends DatabaseInfoUtils> cls = this.getClass();
+        Class<? extends SupportTable> cls = this.getClass();
         Field[] fields = cls.getDeclaredFields();
         SQLiteDatabase db = EasySqlite.getmDatabase();
         ContentValues values = new ContentValues();
@@ -166,7 +158,7 @@ public class DatabaseInfoUtils {
 
 
     private String getTableName() {
-        Class<? extends DatabaseInfoUtils> cls = this.getClass();
+        Class<? extends SupportTable> cls = this.getClass();
         CreateTable createTable = new CreateTable();
         return createTable.getTableName(cls);
     }

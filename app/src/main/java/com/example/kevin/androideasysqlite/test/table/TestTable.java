@@ -4,6 +4,7 @@ import com.example.kevin.androideasysqlite.easySqlite.annotation.ConstraintColum
 import com.example.kevin.androideasysqlite.easySqlite.annotation.IntSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.StringSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.TableSql;
+import com.example.kevin.androideasysqlite.easySqlite.sqlutils.SupportTable;
 
 /**
  * Created by kevin on 2018/1/22.
@@ -11,11 +12,15 @@ import com.example.kevin.androideasysqlite.easySqlite.annotation.TableSql;
  */
 
 @TableSql("donwload")
-public class TestTable {
-    @ConstraintColumnSql(autoIncrement = true,primaryKey = true)
+public class TestTable extends SupportTable {
+    @ConstraintColumnSql(autoIncrement = true, primaryKey = true)
     @IntSqlColumn
-    public static final String id = "id";
+    public static String id;
 
     @StringSqlColumn
-    public static final String first = "first";
+    public static String first;
+
+    public static void setFirst(String first) {
+        TestTable.first = first;
+    }
 }

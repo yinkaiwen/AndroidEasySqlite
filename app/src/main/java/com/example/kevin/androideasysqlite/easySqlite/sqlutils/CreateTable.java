@@ -65,7 +65,7 @@ public class CreateTable {
     }
 
 
-    private LinkedHashMap<String, String> getColumnNameAndType(Class<?> cls) {
+    public LinkedHashMap<String, String> getColumnNameAndType(Class<?> cls) {
         LinkedHashMap<String, String> map = new LinkedHashMap<>();
         if (cls == null)
             throw new IllegalArgumentException("Class should not be null");
