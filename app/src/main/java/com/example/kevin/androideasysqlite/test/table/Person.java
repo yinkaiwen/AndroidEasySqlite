@@ -6,7 +6,7 @@ import com.example.kevin.androideasysqlite.easySqlite.annotation.IntSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.RealSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.StringSqlColumn;
 import com.example.kevin.androideasysqlite.easySqlite.annotation.TableSql;
-import com.example.kevin.androideasysqlite.easySqlite.sqlutils.SaveInfo;
+import com.example.kevin.androideasysqlite.easySqlite.sqlutils.DatabaseInfoUtils;
 
 /**
  * Created by kevin on 2018/1/22.
@@ -14,7 +14,7 @@ import com.example.kevin.androideasysqlite.easySqlite.sqlutils.SaveInfo;
  */
 
 @TableSql("person_info")
-public class Person extends SaveInfo {
+public class Person extends DatabaseInfoUtils {
     @ConstraintColumnSql(primaryKey = true, autoIncrement = true, notNull = true)
     @IntSqlColumn
     public static int id;

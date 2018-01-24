@@ -150,6 +150,8 @@ public class CreateTable {
 
     private String getConstraint(Annotation a) {
         String constraint = null;
+
+
         if (a instanceof BoobSqlColumn) {
             constraint = ((BoobSqlColumn) a).value();
         }
@@ -172,7 +174,7 @@ public class CreateTable {
         return constraint;
     }
 
-/*    private String getColumnName(Field f, Object obj) {
+    private String getColumnName(Field f, Object obj) {
         String columnName = null;
         try {
             columnName = (String) f.get(obj);
@@ -184,15 +186,15 @@ public class CreateTable {
         }
 
         return columnName;
-    }*/
+    }
 
     private void checkMoreConstrain(Annotation a) {
         if (!(a instanceof ConstraintColumnSql)) {
             throw new IllegalArgumentException(
                     "The model is" +
-                    "@ConstraintColumnSql(xxxxxx)" +
-                    "@xxxSqlColumn" +
-                    "");
+                            "@ConstraintColumnSql(xxxxxx)" +
+                            "@xxxSqlColumn" +
+                            "");
         }
     }
 
