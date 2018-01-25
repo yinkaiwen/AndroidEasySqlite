@@ -1,17 +1,11 @@
 package com.example.kevin.androideasysqlite.test.activity;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.example.kevin.androideasysqlite.R;
-import com.example.kevin.androideasysqlite.easySqlite.core.EasySqlite;
 import com.example.kevin.androideasysqlite.test.config.MySqliteConfig;
-import com.example.kevin.androideasysqlite.test.table.Person;
-
-import java.util.HashMap;
+import com.example.kevin.easysqlite.core.EasySqlite;
 
 public class MainActivity extends AppCompatActivity {
 

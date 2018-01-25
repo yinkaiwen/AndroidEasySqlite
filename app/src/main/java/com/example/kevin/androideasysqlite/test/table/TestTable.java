@@ -1,10 +1,11 @@
 package com.example.kevin.androideasysqlite.test.table;
 
-import com.example.kevin.androideasysqlite.easySqlite.annotation.ConstraintColumnSql;
-import com.example.kevin.androideasysqlite.easySqlite.annotation.IntSqlColumn;
-import com.example.kevin.androideasysqlite.easySqlite.annotation.StringSqlColumn;
-import com.example.kevin.androideasysqlite.easySqlite.annotation.TableSql;
-import com.example.kevin.androideasysqlite.easySqlite.sqlutils.SupportTable;
+
+import com.example.kevin.easysqlite.annotation.ConstraintColumnSql;
+import com.example.kevin.easysqlite.annotation.IntSqlColumn;
+import com.example.kevin.easysqlite.annotation.StringSqlColumn;
+import com.example.kevin.easysqlite.annotation.TableSql;
+import com.example.kevin.easysqlite.sqlutils.SupportTable;
 
 /**
  * Created by kevin on 2018/1/22.

@@ -1,9 +1,10 @@
 package com.example.kevin.androideasysqlite.test.config;
 
-import com.example.kevin.androideasysqlite.easySqlite.config.SqliteConfig;
+import com.example.kevin.androideasysqlite.test.table.Introduction;
 import com.example.kevin.androideasysqlite.test.table.News;
 import com.example.kevin.androideasysqlite.test.table.Person;
 import com.example.kevin.androideasysqlite.test.table.TestTable;
+import com.example.kevin.easysqlite.config.SqliteConfig;
 
 /**
  * Created by kevin on 2018/1/23.
@@ -12,12 +13,13 @@ import com.example.kevin.androideasysqlite.test.table.TestTable;
 
 public class MySqliteConfig implements SqliteConfig {
     public static final String databaseName = "test";
-    public static final int version = 3;
+    public static final int version = 6;
 
     public static final Class<?>[] clss = {
             Person.class,
             TestTable.class,
-            News.class
+            News.class,
+            Introduction.class
     };
 
     @Override
